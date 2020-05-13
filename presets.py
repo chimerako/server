@@ -35,7 +35,7 @@
 
 """Presets for libtorrent."""
 
-HYBRID = {
+LIBTORRENT_DEFAULTS = {
   "active_checking": 1,
   "active_dht_limit": 88,
   "active_downloads": -1,
@@ -250,7 +250,7 @@ HYBRID = {
   "whole_pieces_threshold": 25,
   "write_cache_line_size": 156
 }
-OPTIMIZE SPEED = {
+MIN_MEMORY_USAGE = {
   "active_checking": 1,
   "active_dht_limit": 88,
   "active_downloads": -1,

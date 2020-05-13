@@ -350,7 +350,6 @@ MIN_MEMORY_USAGE = {
   "increase_est_reciprocation_rate": 20,
   "initial_picker_threshold": 10,
   "lazy_bitfields": False,
-  "listen_interfaces": "0.0.0.0:6881",
   "listen_queue_size": 1000,
   "listen_system_port_fallback": True,
   "local_download_rate_limit": 0,

@@ -295,7 +295,7 @@ MIN_MEMORY_USAGE = {
   "cache_size": 1024,
   "cache_size_volatile": 256,
   "checking_mem_usage": 2048,
-  "choking_algorithm": 1,
+  "choking_algorithm": 0,
   "close_file_interval": 0,
   "close_redundant_connections": True,
   "coalesce_reads": True,

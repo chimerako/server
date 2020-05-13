@@ -248,7 +248,7 @@ LIBTORRENT_DEFAULTS = {
   "volatile_read_cache": False,
   "web_seed_name_lookup_retry": 1800,
   "whole_pieces_threshold": 25,
-  "write_cache_line_size": 156
+  "write_cache_line_size": 256
 }
 MIN_MEMORY_USAGE = {
   "active_checking": 1,
@@ -282,7 +282,7 @@ MIN_MEMORY_USAGE = {
   "auto_scrape_interval": 1800,
   "auto_scrape_min_interval": 300,
   "auto_sequential": True,
-  "auto_upload_slots": True,
+  "auto_upload_slots": False,
   "auto_upload_slots_rate_based": True,
   "ban_web_seeds": True,
   "broadcast_lsd": True,

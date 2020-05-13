@@ -291,8 +291,6 @@ MIN_MEMORY_USAGE = {
   "ban_web_seeds": True,
   "broadcast_lsd": True,
   "cache_buffer_chunk_size": 256,
-  "cache_expiry": 300,
-  "cache_size": 1024,
   "cache_size_volatile": 256,
   "checking_mem_usage": 2048,
   "choking_algorithm": 0,

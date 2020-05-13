@@ -493,6 +493,7 @@ HIGH_PERFORMANCE_SEED = {
   "file_pool_size": 500,
   "inactivity_timeout": 20,
   "listen_queue_size": 3000,
+  "listen_system_port_fallback": True,
   "lock_disk_cache": False,
   "low_prio_disk": False,
   "max_allowed_in_request_queue": 2000,

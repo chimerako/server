@@ -152,7 +152,7 @@ LIBTORRENT_DEFAULTS = {
   "max_suggest_pieces": 10,
   "min_announce_interval": 300,
   "min_reconnect_time": 60,
-  "mixed_mode_algorithm": 1,
+  "mixed_mode_algorithm": 0,
   "mmap_cache": "",
   "network_threads": 0,
   "no_atime_storage": True,

@@ -68,7 +68,7 @@ LIBTORRENT_DEFAULTS = {
   "auto_scrape_min_interval": 300,
   "auto_sequential": True,
   "auto_upload_slots": False,
-  "auto_upload_slots_rate_based": False,
+  "auto_upload_slots_rate_based": True,
   "ban_web_seeds": True,
   "broadcast_lsd": True,
   "cache_buffer_chunk_size": 128,

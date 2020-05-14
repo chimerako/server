@@ -468,9 +468,9 @@ MIN_MEMORY_USAGE = {
 
 HIGH_PERFORMANCE_SEED = {
   "active_dht_limit": 600,
-  "active_limit": 2000,
-  "active_seeds": 2000,
-  "active_tracker_limit": 2000,
+  "active_limit": -1,
+  "active_seeds": -1,
+  "active_tracker_limit": -1,
   "aio_threads": 8,
   "alert_queue_size": 10000,
   "allow_multiple_connections_per_ip": True,
@@ -483,7 +483,7 @@ HIGH_PERFORMANCE_SEED = {
   "coalesce_reads": False,
   "coalesce_writes": False,
   "connection_speed": 500,
-  "connections_limit": 8000,
+  "connections_limit": 500000,
   "dht_upload_rate_limit": 20000,
   "disk_cache_algorithm": 2,
   "enable_incoming_utp": False,

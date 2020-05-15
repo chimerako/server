@@ -510,7 +510,7 @@ HIGH_PERFORMANCE_SEED = {
   "predictive_piece_announce": 10,
   "read_cache_line_size": 64,
   "read_job_every": 100,
-  "recv_socket_buffer_size": 0
+  "recv_socket_buffer_size": 0,
   "request_timeout": 10,
   "seed_choking_algorithm": 1,
   "send_buffer_low_watermark": 1048576,

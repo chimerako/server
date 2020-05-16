@@ -1,0 +1,28 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+/sbin/ifconfig  enp1s0f0 txqueuelen 10000
+sleep 10 && ip route | while read p; do ip route change $p initcwnd 10 initrwnd 10; done
+#iptables-restore < /etc/iptables/rules.v4
+ethtool -C enp1s0f0 rx-usecs 75
+ethtool -G enp1s0f0 rx 4096 tx 4096
+ethtool -K enp1s0f0 tx off tso off 
+#ethtool -K enp1s0f0  tx off rx  off tso off gso off lro off 
+#ethtool -A enp1s0f0 autoneg off rx on tx on
+echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
+echo 1 | tee /sys/block/sd*/queue/iosched/fifo_batch > /dev/null
+echo 2048 | tee /sys/block/sd*/queue/nr_requests > /dev/null
+echo 1024 | tee /sys/block/sd*/queue/read_ahead_kb > /dev/null
+maximize-cpu-freq
+rss-ladder  enp1s0f0
+exit 0

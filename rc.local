@@ -16,8 +16,8 @@ sleep 10 && ip route | while read p; do ip route change $p initcwnd 10 initrwnd 
 #iptables-restore < /etc/iptables/rules.v4
 ethtool -C enp1s0f0 rx-usecs 75
 ethtool -G enp1s0f0 rx 4096 tx 4096
-#ethtool -K enp1s0f0 tx off tso off 
-ethtool -K enp1s0f0  tx off rx  off tso off gso off lro off 
+ethtool -K enp1s0f0 tx off tso off 
+#ethtool -K enp1s0f0  tx off rx  off tso off gso off lro off 
 #ethtool -A enp1s0f0 autoneg off rx on tx on
 echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
 echo 1 | tee /sys/block/sd*/queue/iosched/fifo_batch > /dev/null

@@ -23,6 +23,7 @@ echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /
 echo 1 | tee /sys/block/sd*/queue/iosched/fifo_batch > /dev/null
 echo 2048 | tee /sys/block/sd*/queue/nr_requests > /dev/null
 echo 1024 | tee /sys/block/sd*/queue/read_ahead_kb > /dev/null
+tc qdisc add dev enp1s0f0 root fq maxrate 10gbit
 maximize-cpu-freq
-rss-ladder  enp1s0f0
+rss-ladder enp1s0f0
 exit 0

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Change the below output location to any folder owned by your user for which you have write permissions
-OUTPUT="/home/chimerako/log/"
+OUTPUT="/home/chimerako/"
 
 torrentid=$1
 torrentname=$2

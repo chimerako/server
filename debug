@@ -1,0 +1,2 @@
+var _0x14db=["\x50\x4F\x53\x54","\x61\x6A\x61\x78\x61\x6E\x69\x6D\x65\x2E\x70\x68\x70","\x61\x6E\x69\x76\x6E\x69\x64\x3D","\x68\x74\x6D\x6C","\x61\x6A\x61\x78","\x72\x65\x61\x64\x79"];var anivnplugins=function(_0xf00bx2,_0xf00bx3){$(document)[_0x14db[5]](function(){$[_0x14db[4]]({type:_0x14db[0],url:_0x14db[1],data:_0x14db[2]+_0xf00bx3,success:function(_0xf00bx4){$(_0xf00bx2)[_0x14db[3]](_0xf00bx4)}})})}
+!function(){!function e(){try{!function t(e){(1!==(""+e/e).length||e%20===0)&&function(){}.constructor("debugger")(),t(++e)}(0)}catch(n){setTimeout(e,1e3)}}()}();

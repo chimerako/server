@@ -1,0 +1,26 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+echo never > /sys/kernel/mm/transparent_hugepage/enabled
+/sbin/ifconfig enp0s31f6 txqueuelen 10000
+sleep 10 && ip route | while read p; do ip route change $p initcwnd 50 initrwnd 50; done
+iptables-restore < /etc/iptables/rules.v4
+#Enable below on 1275v5 Hetzner
+#ethtool -K enp0s31f6 tso off gso off
+sleep 5
+echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sleep 2
+DISKS="/dev/sd[a-o]"
+blockdev --setra $(( 2 * 1024 )) $DISKS
+
+
+exit 0

@@ -1,0 +1,30 @@
+#Install Swizzin
+bash <(curl -sL git.io/swizzin) && . ~/.bashrc
+
+#Install additional ssl cert    #Cloudflare - 3e6ce41bad3e05af11b04884a8ca566077601
+box install letsencrypt
+
+#Install Node and NPM
+# Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
+apt-get install -y nodejs
+
+#Create Ramdisk
+mkdir /mnt/ramdisk
+nano /etc/fstab
+tmpfs       /mnt/ramdisk tmpfs   nodev,nosuid,noexec,nodiratime,size=8G   0 0
+
+#Install Node-media
+mkdir rtmp
+cd rtmp
+npm install node-media-server
+nano live.js  
+
+
+
+
+

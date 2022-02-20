@@ -1,0 +1,7 @@
+# /dev/md4
+UUID=ca118eb0-4893-4be4-86e6-8b595810be92       /               xfs             rw,noatime,attr2,inode64,sunit=1024,swi>
+# /dev/md2
+UUID=3658a4ee-c708-4afd-8200-cc3f43bb8d5e       /boot           ext2            rw,relatime     0 2
+
+# /dev/md3
+UUID=a023289d-d1cc-4b0e-891c-2f15c510ea58       none            swap            defaults,pri=-2 0 0

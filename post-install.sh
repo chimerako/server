@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Backup existing nginx.conf
-sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
+sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 
 # Download nginx.conf from the provided URL
 sudo wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/chimerako/server/master/nginx.conf?token=GHSAT0AAAAAACKFQ7XV3KXEH24R5HIT6EOIZKQKADQ
@@ -10,7 +10,7 @@ sudo wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/chimerako/s
 sudo wget -O /etc/nginx/sites-enabled/live.conf https://raw.githubusercontent.com/chimerako/server/master/live.conf?token=GHSAT0AAAAAACKFQ7XU7EZZYXF6T5QDWZRIZKQJ7KA
 
 # Change ownership of /mnt/hls to www-data
-sudo mkdir /mnt/hls
+mkdir /mnt/hls
 sudo chown -R www-data:www-data /mnt/hls
 
 # Install streamlink

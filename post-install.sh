@@ -18,8 +18,8 @@ sudo apt-get update
 sudo apt-get install -y streamlink
 
 # Install youtube-dl
-sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/youtube-dlp
-sudo chmod a+rx /usr/local/bin/youtube-dlp
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/bin/youtube-dlp
+sudo chmod a+rx /usr/bin/youtube-dlp
 
 # Download and install the latest version of FFmpeg
 cd /usr/bin

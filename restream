@@ -1,0 +1,8 @@
+ffmpeg -re -i "$(youtube-dl -f best -g [YOUTUBE_LIVE_STREAM_URL])" -acodec copy -vcodec copy -f flv "rtmp://188.166.239.195:1935/live/eM7z*!R91Uifg0lVSS77kLzNqg@!RJ"
+
+streamlink -O [YOUTUBE_LIVE_STREAM_URL] best | ffmpeg -i pipe:0 -acodec copy -vcodec copy -f flv "rtmp://188.166.239.195:1935/live/eM7z*!R91Uifg0lVSS77kLzNqg@!RJ"
+
+ffmpeg -i "$STREAM_URL" -c copy -bsf:a aac_adtstoasc "${RECORDINGS_DIR}/${FILENAME}"
+
+ffmpeg -i input -c:v libx264 -b:v 1020k -vf "scale=1280x720" -preset slow -c:a aac -b:a 128k output
+

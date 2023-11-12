@@ -4,10 +4,10 @@
 sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 
 # Download nginx.conf from the provided URL
-sudo wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/chimerako/server/master/nginx.conf?token=GHSAT0AAAAAACKFQ7XV3KXEH24R5HIT6EOIZKQKADQ
-
+sudo wget -O /etc/nginx/nginx.conf https://pastebin.com/raw/7Z47Uy5s
+ 
 # Download live.conf from the provided URL
-sudo wget -O /etc/nginx/sites-enabled/live.conf https://raw.githubusercontent.com/chimerako/server/master/live.conf?token=GHSAT0AAAAAACKFQ7XU7EZZYXF6T5QDWZRIZKQJ7KA
+sudo wget -O /etc/nginx/sites-enabled/live.conf https://pastebin.com/raw/3xx0c47j
 
 # Change ownership of /mnt/hls to www-data
 mkdir /mnt/hls

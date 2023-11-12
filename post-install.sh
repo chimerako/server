@@ -32,6 +32,8 @@ sudo chmod +x /usr/bin/ffmpeg /usr/bin/ffprobe
 # Clean up downloaded files
 sudo rm -rf ffmpeg-*-amd64-static ffmpeg-release-amd64-static.tar.xz
 
+sudo apt-get install nscd
+
 # Test nginx configuration for errors
 sudo nginx -t
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stream Controller</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .stream-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .start-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .stop-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        .stop-button:disabled {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stream Controller</h1>
+        <div id="streamRows">
+            <!-- Four stream rows will be generated here -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            for(let i = 1; i <= 4; i++) {
+                $('#streamRows').append(generateStreamRow(i));
+            }
+
+            function generateStreamRow(streamId) {
+                return `
+                    <div class="stream-row">
+                        <div class="form-group">
+                            <label for="sourceUrl${streamId}">Source URL:</label>
+                            <input type="text" id="sourceUrl${streamId}" placeholder="Enter source stream URL">
+                        </div>
+                        <div class="form-group">
+                            <label for="destinationUrl${streamId}">Destination URL:</label>
+                            <input type="text" id="destinationUrl${streamId}" placeholder="Enter destination stream URL">
+                        </div>
+                        <button id="startButton${streamId}" class="start-button" onclick="startStream(${streamId})">Start Stream</button>
+                        <button id="stopButton${streamId}" class="stop-button" onclick="stopStream(${streamId})" disabled>Stop Stream</button>
+                    </div>
+                `;
+            }
+
+
+            window.startStream = function(streamId) {
+                var sourceUrl = $(`#sourceUrl${streamId}`).val();
+                var destinationUrl = $(`#destinationUrl${streamId}`).val();
+
+                $.ajax({
+                    url: `/start/${streamId}`,
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ source_url: sourceUrl, destination_url: destinationUrl }),
+                    success: function(response) {
+                        alert(response);
+                        $(`#startButton${streamId}`).prop('disabled', true).removeClass('start-button').addClass('stop-button');
+                        $(`#stopButton${streamId}`).prop('disabled', false);
+                    },
+                    error: function(error) {
+                        alert('Error starting stream');
+                    }
+                });
+            };
+
+            window.stopStream = function(streamId) {
+                $.ajax({
+                    url: `/stop/${streamId}`,
+                    method: 'GET',
+                    success: function(response) {
+                        alert(response);
+                        $(`#startButton${streamId}`).prop('disabled', false).removeClass('stop-button').addClass('start-button');
+                        $(`#stopButton${streamId}`).prop('disabled', true);
+                    },
+                    error: function(error) {
+                        alert('Error stopping stream');
+                    }
+                });
+            };
+        });
+    </script>
+</body>
+</html>
